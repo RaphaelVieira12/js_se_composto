@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Notas do Aluno</h1>
+    <div id="aluno"></div>
+    <script>
+        let aluno1 = String(prompt("Digite o nome do aluno."));
+        let nota1 = Number(prompt("Digite a primeira nota dele"));
+        let nota2 = Number(prompt("Digite a segunda nota dele"));
+        let nota3 = Number(prompt("Digite a terceira nota dele"));
+        let media = parseInt((nota1 + nota2 + nota3) / 3) ;
+        let resul ;
+        let decrescente ;
+
+        if(media >= 6){
+            resul = "O Aluno: " + aluno1 + " Foi Aprovado com média: " + media;
+        }
+        else{
+            resul = "O Aluno: " + aluno1 + " foi Reprovado com média: " + media;
+        }
+
+        if(nota2 > nota1){
+            decrescente = nota2;
+            nota2 = nota1;
+            nota1 = decrescente;
+        }
+
+        if(nota3 > nota1){
+            decrescente = nota3;
+            nota3 = nota1;
+             nota1 = decrescente;
+        }
+
+        if(nota3 > nota2){
+            decrescente = nota3;
+            nota3 = nota2;
+            nota2 = decrescente;
+        }
+        
+
+        document.getElementById("aluno").innerHTML = resul + ("<br> primeira nota: " + nota1 + "<br> segunda nota: " + nota2 + "<br>terceira nota: " + nota3);
+
+    </script>
+    
+</body>
+</html>
